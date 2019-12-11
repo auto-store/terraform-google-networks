@@ -1,9 +1,9 @@
 resource "google_compute_network" "public" {
-  name = var.public-network
+  name = var.public_network
 }
 
 resource "google_compute_network" "private" {
-  name = var.private-network
+  name = var.private_network
 }
 
 resource "google_compute_firewall" "public" {
