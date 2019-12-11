@@ -1,6 +1,7 @@
 variable "project" {
   description = "GCP project name"
   default     = "tomh-lab-1000"
+}
 
 variable "zone" {
   description = "GCP zone"
