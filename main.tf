@@ -1,13 +1,13 @@
 resource "google_compute_network" "public" {
-  name = var.public_network
+  name = var.publicnetwork
 }
 
 resource "google_compute_network" "private" {
-  name = var.private_network
+  name = var.privatenetwork
 }
 
 resource "google_compute_firewall" "public" {
-  name    = var.firewall
+  name    = firewall_public
   network = google_compute_network.public.name
 
   allow {
@@ -19,12 +19,12 @@ resource "google_compute_firewall" "public" {
     ports    = ["80", "8080", "443"]
   }
 
-  source_tags = ["public-server"]
+  source_tags = ["public_server"]
 }
 
 
 resource "google_compute_firewall" "private" {
-  name    = var.firewall
+  name    = firewall_private
   network = google_compute_network.private.name
 
   allow {
@@ -36,5 +36,5 @@ resource "google_compute_firewall" "private" {
     ports    = ["22"]
   }
 
-  source_tags = ["private-server"]
+  source_tags = ["private_server"]
 }

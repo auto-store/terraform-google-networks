@@ -13,12 +13,12 @@ variable "region" {
   default     = "europe-west2"
 }
 
-variable "public_network" {
+variable "publicnetwork" {
  description = "network for public webserver"
  default = "staging_public"
 }
 
-variable "private_network" {
+variable "privatenetwork" {
  description = "network for private webserver"
  default = "staging_private"
 }
