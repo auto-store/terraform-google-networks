@@ -14,8 +14,11 @@ variable "region" {
 
 variable "public-network" {
  description = "network for public webserver"
+ default = ""
 }
 
 variable "private-network" {
  description = "network for private webserver"
+ default = ""
 }
+
