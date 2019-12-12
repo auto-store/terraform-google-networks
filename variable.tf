@@ -22,4 +22,3 @@ variable "privatenetwork" {
  description = "network for private webserver"
  default = "staging_private"
 }
-

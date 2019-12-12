@@ -2,9 +2,6 @@ resource "google_compute_network" "public" {
   name = var.publicnetwork
 }
 
-resource "google_compute_network" "private" {
-  name = var.privatenetwork
-}
 
 resource "google_compute_firewall" "public" {
   name    = firewall_public
@@ -22,19 +19,3 @@ resource "google_compute_firewall" "public" {
   source_tags = ["public_server"]
 }
 
-
-resource "google_compute_firewall" "private" {
-  name    = firewall_private
-  network = google_compute_network.private.name
-
-  allow {
-    protocol = "icmp"
-  }
-
-  allow {
-    protocol = "ssh"
-    ports    = ["22"]
-  }
-
-  source_tags = ["private_server"]
-}
