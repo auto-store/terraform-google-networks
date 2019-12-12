@@ -1,5 +1,5 @@
 resource "google_compute_network" "public" {
-  name = var.publicnetwork
+  name = public_network
 }
 
 
